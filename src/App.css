@@ -114,6 +114,12 @@ main .container-fluid{
   background-color: rgba(0, 0, 0, 0.418);
   
 }
+.card img{
+  padding: 20px 0;
+  border-radius: 40px;
+  max-height: 243px;
+  min-height: 243px;
+}
 .card h5{
   color:white;
   font-size: 30px;
