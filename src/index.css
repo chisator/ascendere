@@ -1,14 +1,7 @@
 *{
   font-family: 'Roboto', sans-serif;
-}
-body{
   margin: 0;
    padding: 0;
-   /* height: 930px;
-   background-image: url(./assets/img/fotor_2023-5-28_15_35_37.jpg);
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat; */
 }
 .image {
   height: 400px;

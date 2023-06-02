@@ -90,10 +90,10 @@ main .container-fluid{
   font-weight: 300;
   padding: 20px;
   border-radius: 20px;
-  padding: 20px 15%
+  padding: 20px 10%
 }
 .texto h1{
-  font-size: 60px;
+  font-size: 50px;
   margin: 20px 0px;
 }
 
@@ -101,7 +101,7 @@ main .container-fluid{
 .servicios{
   width: 100%;
   background-image: var(--color-fade);
-  padding: 50px 15%
+  padding: 50px 10%
 }
 .servicios  h2{
   font-size: 50px;

@@ -1,6 +1,78 @@
 footer{
     background-color: #333b4c;
+    padding: 90px 10% 50px
 }
 .footer-logo{
     font-weight:900 ;
+    margin-right: 10px;
+}
+.h5{
+    font-weight: 300;
+
+}
+footer li{
+    list-style: none;
+    padding: 5px;
+    
+}
+footer li a{
+    opacity: 0.5;
+    transition: 300ms;
+    position: relative;
+    display: inline-block;
+    
+
+}
+footer li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+footer li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/* footer li a::before{
+    position: absolute;
+    border-bottom: #fff 2px solid;
+    width: 0%;
+    content: '';
+    bottom: -2px;
+    left: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+}
+footer li a:hover::before{
+    width: 100%;
+} */
+footer li a:hover{
+    opacity: 1;
+}
+footer ul{
+    font-weight: 300;
+    font-size:15px ;
+    margin:0 ;
+    padding: 0;
+
+}
+footer hr{
+    margin: 20px;
+    border-color: #fff;
+    opacity: 0.2;
+    
+    
+}
+footer li a.contacto{
+    opacity: 1;
+    color: #fff;
+    font-weight: bold;
 }
