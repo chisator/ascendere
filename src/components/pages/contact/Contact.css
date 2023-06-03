@@ -1,0 +1,66 @@
+.img-escribinos{
+    
+    min-height: 450px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../../assets/img/edificios2.jpg);
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+.img-escribinos h1{
+    padding:6% 0;
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: -2.08px;
+}
+
+.escribinos *{
+    color: black;
+}
+main.escribinos{
+    background-color: #fff;
+    padding: 100px 10px;
+    
+}
+main.escribinos .row{
+    width: 100%;
+
+}
+.form-container{
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+.form-container form{
+    position: relative;
+}
+.info{
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px ;
+    background-color: rgb(70, 70, 218);
+}
+.info *{
+    color: white;
+
+}
+.info p{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0px;
+}
+.info a{
+    font-size: 24px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: underline;
+    position: relative;
+    margin-bottom: 25px;
+}

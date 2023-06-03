@@ -1,11 +1,11 @@
-import img1 from '../../../../assets/img/img1.webp'
-import img2 from '../../../../assets/img/img2.webp'
-import img3 from '../../../../assets/img/img3.webp'
+import img1 from '../../../assets/img/img1.webp'
+import img2 from '../../../assets/img/img2.webp'
+import img3 from '../../../assets/img/img3.webp'
 export const Main = () => {
   return (
     <main>
       <section className='image'></section>
-        <div className="container-fluid">
+        <div className="container-fluid home">
           <div className="row">
             <div className="col-lg-12 texto">
               <h1>ASCENDERE</h1>

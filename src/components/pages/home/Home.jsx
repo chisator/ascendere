@@ -1,7 +1,7 @@
 
-import { Footer } from './footer/Footer'
-import { Header } from './header/Header'
-import { Main } from './main/Main'
+import { Footer } from '../../common/footer/Footer'
+import { Header } from '../../common/header/Header'
+import { Main } from '../../common/main/Main'
 
 export const Home = () => {
   return (
