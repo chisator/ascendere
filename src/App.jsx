@@ -1,21 +1,19 @@
-import './App.css'
-import { Routes, Route } from 'react-router-dom';
-import { Home } from './components/pages/home/Home';
-import { Contact } from './components/pages/contact/Contact';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
+import { routes } from "./routes/routes";
 
 function App() {
-  
-  
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/contact' element={<Contact />}/>
+        {routes.map(({ path, Element, id }) => (
+          <Route path={path} key={id} element={<Element />} />
+        ))}
+        <Route path="*" element={<h1 style={{color:"black"}}>404 NOT FOUND</h1>} />
       </Routes>
-      
-      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
