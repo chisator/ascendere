@@ -14,7 +14,7 @@ ul {
   margin: 0;
   width: 100%;
 }
-header {
+.header-main {
   position: fixed;
   max-height: 60px;
   width: 100%;

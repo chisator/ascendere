@@ -39,7 +39,7 @@ export const Header = () => {
     prevScrollPos = currentScrollPos;
   };
   return (
-    <header className={visible}>
+    <header className={`header-main ${visible}`}>
       <nav className="navbar navbar-expand-md bg-body-tertiary">
         <div className="container-fluid">
           <div className="col-sm-3 col-4">
@@ -57,11 +57,7 @@ export const Header = () => {
             <span className="line3__bars-menu" ref={line3BarsRef}></span>
           </div>
           <div className={`navbar-ul col-8 ${isShow ? "show" : ""}`}>
-            <ul
-              className={`${
-                isShow ? "show" : ""
-              }navbar-nav`}
-            >
+            <ul className={`${isShow ? "show" : ""}navbar-nav`}>
               <div className="nav-empresa-servicio">
                 <li>
                   <Link to={"/la-empresa"}>La Empresa</Link>
@@ -85,19 +81,19 @@ export const Header = () => {
                       onMouseLeave={handleHoverDisable}
                     >
                       <li>
-                        <a className="" href="#">
+                        <Link className="" to={"/servicios"}>
                           Clima Laboral
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="" href="#">
+                        <Link className="" to={"/servicios"}>
                           Autoliderazgo
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="" href="#">
+                        <Link className="" to={"/servicios"}>
                           Consultoria de RRHH
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
