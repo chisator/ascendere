@@ -35,13 +35,13 @@ header.visible {
 .logo-header {
   width: 100px;
 }
-li a {
+.header-main li a {
   cursor: pointer;
   font-weight: 500;
   position: relative;
   display: inline-block;
 }
-li a::after {
+.header-main li a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -53,7 +53,7 @@ li a::after {
   transform-origin: bottom right;
   transition: transform 0.2s ease-out;
 }
-li a:hover::after {
+.header-main li a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

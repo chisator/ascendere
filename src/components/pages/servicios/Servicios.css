@@ -1,6 +1,20 @@
 .page-servicios * {
   color: black;
 }
+#subnav-serv {
+  position: relative;
+}
+#menu-backdrop {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.518);
+  left: var(--left);
+  top: var(--top);
+  width: var(--width);
+  height: var(--height);
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+  z-index: -10;
+}
 .image-servicio {
   min-height: 450px;
   background-position: center;
@@ -17,16 +31,31 @@
   font-weight: 400;
   letter-spacing: -2.08px;
 }
-.vista-servicio{
-    width: 100%;
-    height: 500px;
-    
+.vista-servicio {
+  width: 100%;
+  min-height: 600px;
+  
 }
-.carousel-item{
-    height: 100%;
-    background-color: rgb(101, 90, 90);
+.carousel-item {
+  height: 100%;
 }
-.subnav{
-    border:solid black 2px;
-    padding: 10px;
+
+.subnav {
+  cursor: pointer;
+  padding: 4px 5px;
+}
+.container-serv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.container-serv img {
+  width: 95%;
+  margin: auto;
+}
+@media(max-width:768px) {
+  .carousel-item{
+    margin: 10% 0;
+  }
 }
