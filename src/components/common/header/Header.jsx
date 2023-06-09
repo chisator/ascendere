@@ -2,8 +2,14 @@ import { useRef, useState } from "react";
 import logo from "../../../assets/img/logo-sin-fondo.png";
 import { Link } from "react-router-dom";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { useContext } from "react";
+import { ServicioCarouselContext } from "../../../context/servicioCarouselContext";
 
 export const Header = () => {
+  const { setCarouselActive } = useContext(ServicioCarouselContext);
+  const handleActive = (e) => {
+    setCarouselActive(e);
+  };
   const line1BarsRef = useRef(null);
   const line2BarsRef = useRef(null);
   const line3BarsRef = useRef(null);
@@ -81,17 +87,29 @@ export const Header = () => {
                       onMouseLeave={handleHoverDisable}
                     >
                       <li>
-                        <Link className="" to={"/servicios"}>
+                        <Link
+                          onClick={() => handleActive(1)}
+                          className=""
+                          to={"/servicios"}
+                        >
                           Clima Laboral
                         </Link>
                       </li>
                       <li>
-                        <Link className="" to={"/servicios"}>
+                        <Link
+                          onClick={() => handleActive(2)}
+                          className=""
+                          to={"/servicios"}
+                        >
                           Autoliderazgo
                         </Link>
                       </li>
                       <li>
-                        <Link className="" to={"/servicios"}>
+                        <Link
+                          onClick={() => handleActive(3)}
+                          className=""
+                          to={"/servicios"}
+                        >
                           Consultoria de RRHH
                         </Link>
                       </li>

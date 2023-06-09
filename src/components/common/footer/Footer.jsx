@@ -1,7 +1,13 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ServicioCarouselContext } from "../../../context/servicioCarouselContext";
 export const Footer = () => {
+  const { setCarouselActive } = useContext(ServicioCarouselContext);
+  const handleActive = (e) => {
+    setCarouselActive(e);
+  };
   return (
     <footer className="container-fluid">
       <div className="row">
@@ -32,13 +38,13 @@ export const Footer = () => {
               <h5 className="h5">Servicios</h5>
               <ul>
                 <li>
-                  <a href="">Clima Laboral</a>
+                  <Link onClick={() => handleActive(1)} to={"/servicios"}>Clima Laboral</Link>
                 </li>
                 <li>
-                  <a href="">Autoliderazgo</a>
+                  <Link onClick={() => handleActive(1)} to={"/servicios"}>Autoliderazgo</Link>
                 </li>
                 <li>
-                  <a href="">Consultoría de RR.HH.</a>
+                  <Link onClick={() => handleActive(1)} to={"/servicios"}>Consultoría de RR.HH.</Link>
                 </li>
               </ul>
             </div>

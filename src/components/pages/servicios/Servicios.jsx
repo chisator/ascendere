@@ -4,29 +4,33 @@ import img2 from "../../../assets/img/img2.webp";
 import img3 from "../../../assets/img/img3.webp";
 import { Header } from "../../common/header/Header";
 import "./Servicios.css";
+import { useContext, useEffect } from "react";
+import { ServicioCarouselContext } from "../../../context/servicioCarouselContext";
 
 export const Servicios = () => {
-  const listItem = document.querySelectorAll("#subnav-serv nav ul li a");
-  console.log(listItem);
-  const backdrop = document.querySelector("#menu-backdrop");
-  listItem.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      const { left, top, width, height } = item.getBoundingClientRect();
+  const { carouselActive } = useContext(ServicioCarouselContext);
+  useEffect(() => {
+    const listItem = document.querySelectorAll("#subnav-serv nav ul li a");
+    const backdrop = document.querySelector("#menu-backdrop");
+    listItem.forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        const { left, top, width, height } = item.getBoundingClientRect();
 
-      backdrop.style.setProperty("--left", `${left}px`);
-      backdrop.style.setProperty("--top", `${top-top+5}px`);
-      backdrop.style.setProperty("--width", `${width}px`);
-      backdrop.style.setProperty("--height", `${height}px`);
+        backdrop.style.setProperty("--left", `${left}px`);
+        backdrop.style.setProperty("--top", `${top - top + 2}px`);
+        backdrop.style.setProperty("--width", `${width}px`);
+        backdrop.style.setProperty("--height", `${height}px`);
 
-      backdrop.style.opacity = "1";
-      backdrop.style.visibility = "visible";
+        backdrop.style.opacity = "1";
+        backdrop.style.visibility = "visible";
+      });
+
+      item.addEventListener("mouseleave", () => {
+        backdrop.style.opacity = "0";
+        backdrop.style.visibility = "hidden";
+      });
     });
-
-    item.addEventListener("mouseleave", () => {
-      backdrop.style.opacity = "0";
-      backdrop.style.visibility = "hidden";
-    });
-  });
+  }, []);
   return (
     <>
       <Header />
@@ -100,7 +104,7 @@ export const Servicios = () => {
           </div>
           <div className="carousel-inner vista-servicio w-100">
             <div
-              className="primer-serv carousel-item active"
+              className={`carousel-item ${carouselActive == 1 ? "active" : ""}`}
               data-bs-interval="10000"
             >
               <div className="h-100 d-flex align-items-center container">
@@ -111,7 +115,7 @@ export const Servicios = () => {
                   <picture className="col-12 col-md-5">
                     <img src={img1} alt="" />
                   </picture>
-                  <div className="col-12 col-md-3">
+                  <div className="col-12 col-md-4">
                     <p>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                       Odio, voluptatibus id, necessitatibus at earum aperiam
@@ -133,7 +137,10 @@ export const Servicios = () => {
                 </div>
               </div>
             </div>
-            <div className="carousel-item" data-bs-interval="2000">
+            <div
+              className={`carousel-item ${carouselActive == 2 ? "active" : ""}`}
+              data-bs-interval="2000"
+            >
               <div className="h-100 d-flex align-items-center container">
                 <div className=" container-serv ">
                   <div className="col-12 col-md-8 d-flex align-items-center justify-content-center">
@@ -142,7 +149,7 @@ export const Servicios = () => {
                   <picture className="col-12 col-md-5">
                     <img src={img2} alt="" />
                   </picture>
-                  <div className="col-12 col-md-3">
+                  <div className="col-12 col-md-4">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Aliquid temporibus quod aliquam consequuntur, sapiente
@@ -164,7 +171,9 @@ export const Servicios = () => {
                 </div>
               </div>
             </div>
-            <div className="carousel-item">
+            <div
+              className={`carousel-item ${carouselActive == 3 ? "active" : ""}`}
+            >
               <div className="h-100 d-flex align-items-center container">
                 <div className="container-serv ">
                   <div className="col-12 col-md-8 d-flex align-items-center justify-content-center">
@@ -173,7 +182,7 @@ export const Servicios = () => {
                   <picture className="col-12 col-md-5">
                     <img src={img3} alt="" />
                   </picture>
-                  <div className="col-12 col-md-3">
+                  <div className="col-12 col-md-4">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Autem magni nihil vitae excepturi maiores explicabo,
