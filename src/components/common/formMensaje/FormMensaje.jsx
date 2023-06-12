@@ -2,8 +2,12 @@ import { Alert, Button, Grid, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 export const FormMensaje = () => {
+  const form = useRef();
+
   const [alert, setAlert] = useState(false);
   const alerta = () => {
     setAlert(!alert);
@@ -14,11 +18,25 @@ export const FormMensaje = () => {
     telefono: "",
     mensaje: "",
   };
-  const dataForm = (data) => {
-    
-    setAlert(true);
-    console.log(data);
-  };
+    const sendEmail = () => {
+      emailjs
+        .sendForm(
+          "service_aehgh98",
+          "template_vzwhr8x",
+          form.current,
+          "WT1QDXquCnNrkcVIv"
+        )
+        .then(
+          () => {
+            setAlert(true);
+            
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    };
+
   const { handleSubmit, handleChange, handleBlur, errors, touched, values } =
     useFormik({
       initialValues: valoresIniciales,
@@ -34,20 +52,20 @@ export const FormMensaje = () => {
           .min(5, "Mensaje muy corto")
           .required("Dejenos su mensaje"),
       }),
-      onSubmit: dataForm,
+      onSubmit: sendEmail,
     });
   return (
     <>
       <div className="col-12 col-md-6  form-container">
-      {alert ? (
-        <Alert variant="filled" severity="success" onClose={() => alerta()}>
-          Formulario enviado, espere nuestra respuesta.
-        </Alert>
-      ) : null}
+        {alert ? (
+          <Alert variant="filled" severity="success" onClose={() => alerta()}>
+            Formulario enviado, espere nuestra respuesta.
+          </Alert>
+        ) : null}
         <h3>
           Completa el formulario y recibiras nuestra respuesta a la brevedad
         </h3>
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" ref={form} onSubmit={handleSubmit}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <TextField
@@ -98,6 +116,7 @@ export const FormMensaje = () => {
               <TextField
                 fullWidth
                 className=""
+                multiline
                 id="standard-basic"
                 label="Mensaje"
                 variant="standard"
@@ -118,6 +137,7 @@ export const FormMensaje = () => {
               width: "50%",
               backgroundColor: "rgb(70, 70, 218)",
             }}
+            id="button"
             type="submit"
             variant="contained"
             endIcon={<SendIcon />}

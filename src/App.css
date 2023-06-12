@@ -171,27 +171,27 @@ main .container-fluid.home {
 .texto {
   width: 100%;
   position: relative;
-  font-size: 28px;
-  font-weight: 300;
+  font-size: 22px;
+  font-weight: 400;
   padding: 20px;
   border-radius: 20px;
   padding: 20px 10%;
 }
 .texto h1 {
-  font-size: 50px;
-  margin: 20px 0px;
+  font-size: 46px;
+  margin: 10px 0px;
 }
 
 .servicios {
   width: 100%;
   background-image: var(--color-fade);
-  padding: 50px 10%;
+  padding: 40px 10%;
 }
 .servicios h2 {
-  font-size: 50px;
+  font-size: 46px;
 }
 .card {
-  min-height: 600px;
+  min-height: 550px;
   width: 20rem;
   margin: auto;
   margin-top: 20px;
@@ -205,7 +205,7 @@ main .container-fluid.home {
 }
 .card h5 {
   color: white;
-  font-size: 30px;
+  font-size: 26px;
 }
 .card a {
   position: absolute;
