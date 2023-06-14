@@ -22,7 +22,7 @@ ul {
   left: 0;
   z-index: 5;
   transition: 0.4s;
-  padding-top: 20px;
+  padding: 20px 0;
   translate: 0 -150px;
 }
 header.visible {

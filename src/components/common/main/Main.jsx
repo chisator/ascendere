@@ -1,12 +1,17 @@
 import { SeccionServicio } from "../seccionServicios/SeccionServicio";
+import AOS from "aos";
+import { useEffect } from "react";
 
 export const Main = () => {
+   useEffect(() => {
+     AOS.init({ duration: 700 });
+   }, []);
   return (
     <main>
       <section className="image"></section>
       <div className="container-fluid home">
         <div className="row">
-          <div className="col-lg-12 texto">
+          <div className="col-lg-12 texto" data-aos="fade-up">
             <h1>ASCENDERE</h1>
             <p>
               Nuestro objetivo es inspirar y capacitar a las personas en todas
@@ -29,7 +34,7 @@ export const Main = () => {
         </div>
       </div>
       <section className="image"></section>
-      <SeccionServicio/>
+      <SeccionServicio />
       <section className="image"></section>
       <section className="container-fluid">
         <div className="row"></div>

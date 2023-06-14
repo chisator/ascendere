@@ -2,12 +2,22 @@
   color: black;
 }
 #subnav-serv {
-  position: relative;
+  position:sticky;
+  z-index: 4;
+  background-color: white;
+  top: 0px;
   margin: 15px 0;
+}
+#subnav-serv nav ul li{
+  display: flex;
+  align-items: center;
+  height: 35px;
 }
 #menu-backdrop {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.518);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
   left: var(--left);
   top: var(--top);
   width: var(--width);

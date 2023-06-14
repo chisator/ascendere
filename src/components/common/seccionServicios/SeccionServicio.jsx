@@ -1,33 +1,30 @@
 import img1 from "../../../assets/img/img1.webp";
 import img2 from "../../../assets/img/img2.webp";
 import img3 from "../../../assets/img/img3.webp";
-import AOS from "aos"
-import 'aos/dist/aos.css'
-import { useContext, useEffect } from "react";
-import { ServicioCarouselContext } from "../../../context/servicioCarouselContext";
 import { Link } from "react-router-dom";
+import { addService } from "../../../store/serviceSlice";
+import { useDispatch } from "react-redux";
+
 export const SeccionServicio = () => {
-  useEffect(()=>{
-    AOS.init({duration:700})
-  },[])
-    const { setCarouselActive } = useContext(ServicioCarouselContext);
-    const handleActive = (e)=>{
-        setCarouselActive(e)
-        window.scrollTo({
-          top: 350,
-          behavior: "smooth",
-        });
-    }
+  const dispatch= useDispatch()
+  const handleActive = (e) => {
+    dispatch(addService(e));
+    window.scrollTo({
+      top: 350,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="container-fluid servicios">
-      <h2>Nuestros Servicios</h2>
+      <h2 data-aos="fade-up" data-aos-duration="1000">
+        Nuestros Servicios
+      </h2>
       <div className="row">
         <div
           className="col-xs-4 card"
-          data-aos="fade-right"
-          data-aos-offset="100"
-          data-aos-easing="ease-in-sine"
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <img src={img1} className="card-img-top" alt="" />
           <div className="card-body">
@@ -47,9 +44,8 @@ export const SeccionServicio = () => {
         </div>
         <div
           className="col-xs-4 card"
-          data-aos="fade-right"
-          data-aos-offset="100"
-          data-aos-easing="ease-in-sine"
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <img src={img2} className="card-img-top" alt="" />
           <div className="card-body">
@@ -69,9 +65,8 @@ export const SeccionServicio = () => {
         </div>
         <div
           className="col-xs-4 card"
-          data-aos="fade-right"
-          data-aos-offset="100"
-          data-aos-easing="ease-in-sine"
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <img src={img3} className="card-img-top" alt="" />
           <div className="card-body">

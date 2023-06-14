@@ -56,7 +56,7 @@ export const FormMensaje = () => {
     });
   return (
     <>
-      <div className="col-12 col-md-6  form-container">
+      <div className="col-12 col-md-6  form-container" data-aos="zoom-in-up">
         {alert ? (
           <Alert variant="filled" severity="success" onClose={() => alerta()}>
             Formulario enviado, espere nuestra respuesta.

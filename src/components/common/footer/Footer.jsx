@@ -1,13 +1,10 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ServicioCarouselContext } from "../../../context/servicioCarouselContext";
+import { addService } from "../../../store/serviceSlice";
+import { useDispatch } from "react-redux";
 export const Footer = () => {
-  const { setCarouselActive } = useContext(ServicioCarouselContext);
-  const handleActive = (e) => {
-    setCarouselActive(e);
-  };
+  const dispatch = useDispatch();
   return (
     <footer className="container-fluid">
       <div className="row">
@@ -38,13 +35,28 @@ export const Footer = () => {
               <h5 className="h5">Servicios</h5>
               <ul>
                 <li>
-                  <Link onClick={() => handleActive(1)} to={"/servicios"}>Clima Laboral</Link>
+                  <Link
+                    onClick={() => dispatch(addService(1))}
+                    to={"/servicios"}
+                  >
+                    Clima Laboral
+                  </Link>
                 </li>
                 <li>
-                  <Link onClick={() => handleActive(1)} to={"/servicios"}>Autoliderazgo</Link>
+                  <Link
+                    onClick={() => dispatch(addService(2))}
+                    to={"/servicios"}
+                  >
+                    Autoliderazgo
+                  </Link>
                 </li>
                 <li>
-                  <Link onClick={() => handleActive(1)} to={"/servicios"}>Consultoría de RR.HH.</Link>
+                  <Link
+                    onClick={() => dispatch(addService(3))}
+                    to={"/servicios"}
+                  >
+                    Consultoría de RR.HH.
+                  </Link>
                 </li>
               </ul>
             </div>

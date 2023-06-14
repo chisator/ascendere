@@ -4,11 +4,12 @@ import img2 from "../../../assets/img/img2.webp";
 import img3 from "../../../assets/img/img3.webp";
 import { Header } from "../../common/header/Header";
 import "./Servicios.css";
-import { useContext, useEffect } from "react";
-import { ServicioCarouselContext } from "../../../context/servicioCarouselContext";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export const Servicios = () => {
-  const { carouselActive } = useContext(ServicioCarouselContext);
+  const carouselActive= useSelector((store) => store.serviceSlice.value);
+  
   useEffect(() => {
     const listItem = document.querySelectorAll("#subnav-serv nav ul li a");
     const backdrop = document.querySelector("#menu-backdrop");
@@ -17,7 +18,7 @@ export const Servicios = () => {
         const { left, top, width, height } = item.getBoundingClientRect();
 
         backdrop.style.setProperty("--left", `${left}px`);
-        backdrop.style.setProperty("--top", `${top - top + 2}px`);
+        backdrop.style.setProperty("--top", `${top - top + 5}px`);
         backdrop.style.setProperty("--width", `${width}px`);
         backdrop.style.setProperty("--height", `${height}px`);
 
@@ -31,12 +32,18 @@ export const Servicios = () => {
       });
     });
   }, []);
+  const scrollMove = () => {
+    window.scrollTo({
+      top: 450,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <Header />
       <div className="image-servicio">
         <div></div>
-        <div className="container">
+        <div className="container" data-aos="fade-up">
           <h1>Nuestros servicios</h1>
         </div>
       </div>
@@ -47,6 +54,7 @@ export const Servicios = () => {
               <li className="">
                 <a
                   className="active subnav"
+                  onClick={() => scrollMove()}
                   data-bs-target="#carouselExampleDark"
                   data-bs-slide-to="0"
                   aria-current="true"
@@ -58,6 +66,7 @@ export const Servicios = () => {
               <li className="">
                 <a
                   className="subnav"
+                  onClick={() => scrollMove()}
                   data-bs-target="#carouselExampleDark"
                   data-bs-slide-to="1"
                   aria-label="Slide 2"
@@ -68,6 +77,7 @@ export const Servicios = () => {
               <li className="">
                 <a
                   className="subnav"
+                  onClick={() => scrollMove()}
                   data-bs-target="#carouselExampleDark"
                   data-bs-slide-to="2"
                   aria-label="Slide 3"
@@ -79,7 +89,11 @@ export const Servicios = () => {
           </nav>
           <div id="menu-backdrop"></div>
         </header>
-        <div id="carouselExampleDark" className="carousel carousel-dark slide">
+        <div
+          id="carouselExampleDark"
+          className="carousel carousel-dark slide"
+          data-aos="zoom-in-up"
+        >
           <div className="carousel-indicators">
             <button
               type="button"
@@ -104,7 +118,7 @@ export const Servicios = () => {
           </div>
           <div className="carousel-inner vista-servicio w-100">
             <div
-              className={`carousel-item ${carouselActive == 1 ? "active" : ""}`}
+              className={`carousel-item ${carouselActive == 1 ? "active" : ""}`} 
               data-bs-interval="10000"
             >
               <div className="h-100 d-flex align-items-center container">
@@ -138,7 +152,7 @@ export const Servicios = () => {
               </div>
             </div>
             <div
-              className={`carousel-item ${carouselActive == 2 ? "active" : ""}`}
+              className={`carousel-item ${carouselActive == 2 ? "active" : ""}`} 
               data-bs-interval="2000"
             >
               <div className="h-100 d-flex align-items-center container">
@@ -172,7 +186,7 @@ export const Servicios = () => {
               </div>
             </div>
             <div
-              className={`carousel-item ${carouselActive == 3 ? "active" : ""}`}
+              className={`carousel-item ${carouselActive == 3 ? "active" : ""}`} 
             >
               <div className="h-100 d-flex align-items-center container">
                 <div className="container-serv ">

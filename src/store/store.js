@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+/* import { createContext, useState } from "react";
 export const ServicioCarouselContext = createContext();
 export const ServicioCarouselContextProvider = ({ children }) => {
   const [carouselActive, setCarouselActive] = useState(1);
@@ -12,3 +12,10 @@ export const ServicioCarouselContextProvider = ({ children }) => {
     </ServicioCarouselContext.Provider>
   );
 };
+ */
+import { configureStore } from "@reduxjs/toolkit";
+import serviceSlice from "./serviceSlice";
+
+export const store = configureStore({
+  reducer: {serviceSlice},
+});

@@ -2,13 +2,19 @@ import { useRef, useState } from "react";
 import logo from "../../../assets/img/logo-sin-fondo.png";
 import { Link } from "react-router-dom";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { useContext } from "react";
-import { ServicioCarouselContext } from "../../../context/servicioCarouselContext";
+import { useDispatch } from "react-redux";
+import { addService } from "../../../store/serviceSlice";
 
 export const Header = () => {
-  const { setCarouselActive } = useContext(ServicioCarouselContext);
+  const dispatch=useDispatch()
+  const scrollMove = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const handleActive = (e) => {
-    setCarouselActive(e);
+     dispatch(addService(e))
   };
   const line1BarsRef = useRef(null);
   const line2BarsRef = useRef(null);
@@ -37,7 +43,7 @@ export const Header = () => {
       setVisible("visible");
     } else {
       setVisible(" ");
-      setIsShow(false)
+      setIsShow(false);
       line1BarsRef.current.classList.remove("activeline1__bars-menu");
       line2BarsRef.current.classList.remove("activeline2__bars-menu");
       line3BarsRef.current.classList.remove("activeline3__bars-menu");
@@ -50,6 +56,7 @@ export const Header = () => {
         <div className="container-fluid">
           <div className="col-sm-3 col-4">
             <Link
+              onClick={() => scrollMove()}
               to={"/"}
               style={{ width: "100px" }}
               className="m-auto d-flex align-items-center"
@@ -66,7 +73,9 @@ export const Header = () => {
             <ul className={`${isShow ? "show" : ""}navbar-nav`}>
               <div className="nav-empresa-servicio">
                 <li>
-                  <Link to={"/la-empresa"}>La Empresa</Link>
+                  <Link onClick={() => scrollMove()} to={"/la-empresa"}>
+                    La Empresa
+                  </Link>
                 </li>
                 <li>
                   <div className="dropdown">
@@ -119,7 +128,9 @@ export const Header = () => {
               </div>
               <div className="nav-contact col-sm-3 col-5">
                 <li>
-                  <Link to="/contact">Contactanos</Link>
+                  <Link onClick={() => scrollMove()} to="/contact">
+                    Contactanos
+                  </Link>
                 </li>
               </div>
             </ul>
