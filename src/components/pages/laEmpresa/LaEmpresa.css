@@ -1,3 +1,17 @@
-.laEmpresa{
-    background-color: black;
+.laEmpresa {
+  background-color: #eaebed;
 }
+.laEmpresa * {
+  color: #2e424d;
+}
+.laEmpresa .container .row {
+    margin: 30px 0 0 0;
+
+}
+.laEmpresa p{
+    margin: 20px;
+}
+.sub-valores{
+    margin: 20px;
+}
+

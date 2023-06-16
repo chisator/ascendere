@@ -1,50 +1,62 @@
+import { useEffect, useRef } from "react";
 import { Footer } from "../../common/footer/Footer";
 import { Header } from "../../common/header/Header";
 import "./LaEmpresa.css";
 export const LaEmpresa = () => {
+  const myElementRef = useRef(null);
+
+  useEffect(() => {
+    if (myElementRef.current) {
+      console.log(myElementRef.current);
+      myElementRef.current.focus();
+    }
+  }, []);
   return (
-    <div className="laEmpresa">
+    <>
       <Header></Header>
-      <div>
-        <nav className="subnav-empresa"></nav>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h2>Misión</h2>
-          </div>
-          <div className="col-12">
-            <p>
-              Nuestra misión es promover el desarrollo personal y
-              profesional de las personas, brindando herramientas y
-              conocimientos que les permitan convertirse en recursos valiosos,
-              líderes excepcionales y alcanzar sus objetivos de manera efectiva.
-              Nos comprometemos a empoderar a nuestros clientes para que
-              descubran su máximo potencial y se conviertan en agentes de cambio
-              en sus vidas y en sus organizaciones.
-            </p>
-          </div>
+      <div className="laEmpresa">
+        <div className="separacion"></div>
+        <div>
+          <nav className="subnav-empresa"></nav>
         </div>
-        <div className="row">
-          <div className="col-12">
-            <h2>Visión</h2>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2>Misión</h2>
+            </div>
+            <div className="col-12">
+              <p>
+                Nuestra misión es promover el desarrollo personal y profesional
+                de las personas, brindando herramientas y conocimientos que les
+                permitan convertirse en recursos valiosos, líderes excepcionales
+                y alcanzar sus objetivos de manera efectiva. Nos comprometemos a
+                empoderar a nuestros clientes para que descubran su máximo
+                potencial y se conviertan en agentes de cambio en sus vidas y en
+                sus organizaciones.
+              </p>
+            </div>
           </div>
-          <div className="col-12">
-            <p>
-              Ser reconocidos como la consultora líder en el desarrollo de
-              autoliderazgo, proporcionando soluciones innovadoras y
-              transformadoras que impulsen el crecimiento personal y profesional
-              en todas las etapas de la vida. Nuestro objetivo es ser el socio
-              preferido por individuos y empresas en su búsqueda de excelencia,
-              impactando positivamente la sociedad a través del desarrollo de
-              líderes auténticos y efectivos.
-            </p>
+          <div className="row">
+            <div className="col-12">
+              <h2>Visión</h2>
+            </div>
+            <div className="col-12">
+              <p>
+                Ser reconocidos como la consultora líder en el desarrollo de
+                autoliderazgo, proporcionando soluciones innovadoras y
+                transformadoras que impulsen el crecimiento personal y
+                profesional en todas las etapas de la vida. Nuestro objetivo es
+                ser el socio preferido por individuos y empresas en su búsqueda
+                de excelencia, impactando positivamente la sociedad a través del
+                desarrollo de líderes auténticos y efectivos.
+              </p>
+            </div>
           </div>
           <div className="row">
             <div className="col-12">
               <h2>Valores</h2>
             </div>
-            <div className="col-12">
+            <div className="col-12 sub-valores">
               <h4>Excelencia</h4>
               <p>
                 Nos esforzamos por brindar servicios de la más alta calidad y
@@ -83,6 +95,6 @@ export const LaEmpresa = () => {
         </div>
       </div>
       <Footer></Footer>
-    </div>
+    </>
   );
 };

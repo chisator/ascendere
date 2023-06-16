@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addService } from "../../../store/serviceSlice";
 
 export const Header = () => {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const scrollMove = () => {
     window.scrollTo({
       top: 0,
@@ -14,7 +14,7 @@ export const Header = () => {
     });
   };
   const handleActive = (e) => {
-     dispatch(addService(e))
+    dispatch(addService(e));
   };
   const line1BarsRef = useRef(null);
   const line2BarsRef = useRef(null);
