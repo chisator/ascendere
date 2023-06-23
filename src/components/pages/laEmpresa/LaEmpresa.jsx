@@ -13,7 +13,7 @@ export const LaEmpresa = () => {
   }, []);
   return (
     <>
-      <Header></Header>
+      <Header> </Header>
       <div className="laEmpresa">
         <div className="separacion"></div>
         <div>
