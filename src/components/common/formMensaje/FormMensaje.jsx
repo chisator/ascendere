@@ -4,6 +4,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
 
 export const FormMensaje = () => {
   const form = useRef();
@@ -18,7 +20,15 @@ export const FormMensaje = () => {
     telefono: "",
     mensaje: "",
   };
-    const sendEmail = () => {
+    const sendEmail = (data) => {
+      let dataDB = {
+        email: data.email,
+        nombre: data.nombre,
+        tel: data.telefono,
+        mensaje: data.mensaje,
+      };
+      const userCollection = collection(db, "Leads");
+      addDoc(userCollection, dataDB);
       emailjs
         .sendForm(
           "service_aehgh98",
@@ -69,9 +79,10 @@ export const FormMensaje = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <TextField
+                autoComplete="name"
                 fullWidth
                 className=""
-                id="standard-basic"
+                id="name"
                 label="Nombre"
                 variant="standard"
                 name="nombre"
@@ -86,7 +97,7 @@ export const FormMensaje = () => {
               <TextField
                 fullWidth
                 className=""
-                id="standard-basic"
+                id="phone"
                 label="Telefono"
                 variant="standard"
                 name="telefono"
