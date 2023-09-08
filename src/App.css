@@ -33,7 +33,7 @@ header.visible {
   --bs-bg-opacity: 0;
 }
 .logo-header {
-  width: 100px;
+  width: 70px;
 }
 .header-main li a {
   cursor: pointer;
@@ -59,6 +59,7 @@ header.visible {
 }
 
 .bars__menu {
+  margin: 30px;
   z-index: 20;
   width: 30px;
   height: 30px;
@@ -109,7 +110,7 @@ header.visible {
   display: none;
   transition:transform 0.5s ease-in-out;
   transform: translateX(10px);
-  background-color: rgba(33, 32, 32, 0.952);
+  background-color: #333b4c;
   border-radius: 20px;
   padding: 10px;
 }
@@ -140,7 +141,9 @@ header.visible {
     flex-direction:row;
     
   }
-  
+  .logo-header {
+  width: 100px;
+}
   .bars__menu {
     display: none;
   }

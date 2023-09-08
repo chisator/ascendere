@@ -1,17 +1,28 @@
 .laEmpresa {
-  background-color: #eaebed;
+  background: url("https://res.cloudinary.com/dqxwowyg6/image/upload/v1694205078/fotor_2023-5-28_15_35_37_c2bo73.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 .laEmpresa * {
-  color: #2e424d;
+  color: white;
 }
 .laEmpresa .container .row {
-    margin: 30px 0 0 0;
+  margin: 30px 0 0 0;
+}
+.laEmpresa p {
+  margin: 20px;
+}
+.sub-valores {
+  margin: 0 0 20px;
+}
+.infoLP {
+  backdrop-filter: blur(40px);
+  
+}
 
-}
-.laEmpresa p{
-    margin: 20px;
-}
-.sub-valores{
-    margin: 20px;
-}
 
+ul.ul-sub-valores li{
+  list-style: disc;
+  margin: 0 0 0 20px;
+}

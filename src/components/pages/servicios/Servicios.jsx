@@ -6,10 +6,12 @@ import { Header } from "../../common/header/Header";
 import "./Servicios.css";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 export const Servicios = () => {
-  const carouselActive= useSelector((store) => store.serviceSlice.value);
-  
+  const carouselActive = useSelector((store) => store.serviceSlice.value);
+
   useEffect(() => {
     const listItem = document.querySelectorAll("#subnav-serv nav ul li a");
     const backdrop = document.querySelector("#menu-backdrop");
@@ -118,101 +120,123 @@ export const Servicios = () => {
           </div>
           <div className="carousel-inner vista-servicio w-100">
             <div
-              className={`carousel-item ${carouselActive == 1 ? "active" : ""}`} 
+              className={`carousel-item ${carouselActive == 1 ? "active" : ""}`}
               data-bs-interval="10000"
             >
               <div className="h-100 d-flex align-items-center container">
                 <div className="  container-serv">
-                  <div className="col-12 col-md-8 d-flex align-items-center justify-content-center">
-                    <h3 className="">¿Como mejorar el clima laboral?</h3>
-                  </div>
-                  <picture className="col-12 col-md-5">
+                  <picture className="col-12 col-md-4">
                     <img src={img1} alt="" />
                   </picture>
-                  <div className="col-12 col-md-4">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Odio, voluptatibus id, necessitatibus at earum aperiam
-                      cumque, laudantium voluptatum fugit asperiores pariatur
-                      ipsa itaque? Fugiat possimus exercitationem iusto optio
-                      dolore doloribus.
+                  <div className="col-12 col-md-6 descripcion">
+                    <p className="des-ns">
+                      ¿Sentís que el clima en la organización está afectando el
+                      logro de los objetivos? ¡Tenemos la solución que
+                      necesitan! En Ascendere, no solo transformamos el clima
+                      organizacional, ¡sino que lo llevamos a un nivel
+                      excepcional! <br /> Imagina un ambiente de trabajo que sea
+                      verdaderamente inspirador, colaborativo y de alto
+                      rendimiento. Ahí es donde entra en juego nuestra
+                      experiencia de más de 15 años de liderazgo en grandes
+                      compañías, para potenciar la motivación, productividad y
+                      bienestar de la organización. <br /> No permitas que un
+                      clima laboral inadecuado sea un obstáculo para el éxito.
+                      ¡Déjanos llevar a tu organización a nuevos niveles de
+                      excelencia! Los objetivos de tu organización o equipo,
+                      están más cerca de lo que pensas.
                     </p>
-                  </div>
-                  <div className="col-12 col-md-8">
-                    <h6>Subtitulo</h6>
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Exercitationem inventore fuga soluta alias ad ea.
-                      Aspernatur repellendus ipsa aliquid adipisci blanditiis
-                      mollitia voluptatem unde quae magni fugit hic, libero
-                      similique.
-                    </p>
+                    <div className="link">
+                      <Link to={"/contact"}>
+                        <Button variant="contained">Contactanos</Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              className={`carousel-item ${carouselActive == 2 ? "active" : ""}`} 
+              className={`carousel-item ${carouselActive == 2 ? "active" : ""}`}
               data-bs-interval="2000"
             >
               <div className="h-100 d-flex align-items-center container">
                 <div className=" container-serv ">
-                  <div className="col-12 col-md-8 d-flex align-items-center justify-content-center">
-                    <h3>Autoliderazgo</h3>
-                  </div>
                   <picture className="col-12 col-md-5">
                     <img src={img2} alt="" />
                   </picture>
-                  <div className="col-12 col-md-4">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Aliquid temporibus quod aliquam consequuntur, sapiente
-                      odit vitae asperiores molestias tempora animi culpa, esse
-                      incidunt distinctio numquam veniam itaque dolorum.
-                      Nostrum, vero.
+                  <div className="col-12 col-md-6 descripcion">
+                    <p className="des-ns">
+                      ¿Sentís que necesitás un impulso en el camino hacia el
+                      logro de tus objetivos? ¡Tenemos la solución ideal para
+                      vos! En Ascendere, te ofrecemos un programa que te ayudará
+                      a descubrir y potenciar tus habilidades de liderazgo
+                      interno. <br /> Imaginate desarrollando una confianza
+                      inquebrantable en tus capacidades y tomando decisiones que
+                      te impulsen hacia tus metas. Ahí es donde entra en juego
+                      nuestra experiencia. Trabajamos incansablemente contigo
+                      para que puedas liderar tu vida de la manera que deseás.{" "}
+                      <br />
+                      No dejes que las dudas o la falta de dirección sean
+                      obstáculos en tu camino. ¡Permítenos ayudarte a forjar un
+                      liderazgo sólido en tu vida! Alcanzar tu máximo potencial
+                      está más cerca de lo que pensás.
                     </p>
-                  </div>
-                  <div className="col-12 col-md-8">
-                    <h6>Subtitulo</h6>
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Exercitationem inventore fuga soluta alias ad ea.
-                      Aspernatur repellendus ipsa aliquid adipisci blanditiis
-                      mollitia voluptatem unde quae magni fugit hic, libero
-                      similique.
-                    </p>
+                    <div className="link">
+                      <Link to={"/contact"}>
+                        <Button variant="contained">Contactanos</Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              className={`carousel-item ${carouselActive == 3 ? "active" : ""}`} 
+              className={`carousel-item ${carouselActive == 3 ? "active" : ""}`}
             >
               <div className="h-100 d-flex align-items-center container">
                 <div className="container-serv ">
-                  <div className="col-12 col-md-8 d-flex align-items-center justify-content-center">
-                    <h3>Consultoria de Recursos Humanos</h3>
-                  </div>
                   <picture className="col-12 col-md-5">
                     <img src={img3} alt="" />
                   </picture>
-                  <div className="col-12 col-md-4">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Autem magni nihil vitae excepturi maiores explicabo,
-                      itaque officiis voluptatum esse illo temporibus in minus
-                      expedita aspernatur tempore beatae modi cumque. Sint!
+                  <div className="col-12 col-md-6 descripcion">
+                    <p className="des-ns consultoria">
+                      ¿Has considerado cómo tu organización puede alcanzar su
+                      máximo potencial? Nuestra consultoría en Recursos Humanos
+                      se enfoca en tres beneficios clave:
+                      <ul>
+                        <li className="rr-hh">
+                          Optimización del Talento: Identificamos las
+                          habilidades y competencias individuales para colocar a
+                          las personas adecuadas en las posiciones adecuadas.
+                          Esto aumenta la productividad y la satisfacción de los
+                          empleados.
+                        </li>
+                        <li className="rr-hh">
+                          Desarrollo de Liderazgo: Capacitamos y desarrollamos a
+                          los líderes de tu organización, fortaleciendo sus
+                          habilidades para guiar equipos hacia el éxito. El
+                          liderazgo efectivo es esencial para el crecimiento
+                          sostenible.
+                        </li>
+                        <li className="rr-hh">
+                          Adaptación al Cambio: En un mundo en constante
+                          evolución, ayudamos a gestionar los cambios
+                          organizativos y a mantener a tu equipo comprometido en
+                          tiempos de transición.
+                        </li>
+                      </ul>
+                      Ascendere es la clave para llevar a tu organización al
+                      siguiente nivel. No solo se trata de gestionar el
+                      personal, sino de optimizar su rendimiento y su
+                      satisfacción para alcanzar resultados excepcionales.
+                      ¿Estás listo para dar el siguiente paso hacia el éxito?
+                      ¡Contáctanos hoy mismo y descubre cómo podemos ayudarte a
+                      lograrlo!
                     </p>
-                  </div>
-                  <div className="col-12 col-md-8">
-                    <h6>Subtitulo</h6>
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Exercitationem inventore fuga soluta alias ad ea.
-                      Aspernatur repellendus ipsa aliquid adipisci blanditiis
-                      mollitia voluptatem unde quae magni fugit hic, libero
-                      similique.
-                    </p>
+                    <div className="link">
+                      <Link to={"/contact"}>
+                        <Button variant="contained">Contactanos</Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
