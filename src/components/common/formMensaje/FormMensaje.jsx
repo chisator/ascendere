@@ -27,6 +27,7 @@ export const FormMensaje = () => {
       tel: data.telefono,
       mensaje: data.mensaje,
     };
+    await addDoc(collection(db, "leads"), dataDB);
     emailjs
       .sendForm(
         "service_aehgh98",
@@ -42,8 +43,6 @@ export const FormMensaje = () => {
           console.log(error.text);
         }
       );
-    const userCollection = collection(db, "leads");
-    addDoc(userCollection, dataDB);
   };
 
   const { handleSubmit, handleChange, handleBlur, errors, touched, values } =
