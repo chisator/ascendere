@@ -20,32 +20,31 @@ export const FormMensaje = () => {
     telefono: "",
     mensaje: "",
   };
-    const sendEmail = (data) => {
-      let dataDB = {
-        email: data.email,
-        nombre: data.nombre,
-        tel: data.telefono,
-        mensaje: data.mensaje,
-      };
-      const userCollection = collection(db, "Leads");
-      addDoc(userCollection, dataDB);
-      emailjs
-        .sendForm(
-          "service_aehgh98",
-          "template_vzwhr8x",
-          form.current,
-          "WT1QDXquCnNrkcVIv"
-        )
-        .then(
-          () => {
-            setAlert(true);
-            
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+  const sendEmail = async (data) => {
+    let dataDB = {
+      email: data.email,
+      nombre: data.nombre,
+      tel: data.telefono,
+      mensaje: data.mensaje,
     };
+    emailjs
+      .sendForm(
+        "service_aehgh98",
+        "template_vzwhr8x",
+        form.current,
+        "WT1QDXquCnNrkcVIv"
+      )
+      .then(
+        () => {
+          setAlert(true);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    const userCollection = collection(db, "leads");
+    addDoc(userCollection, dataDB);
+  };
 
   const { handleSubmit, handleChange, handleBlur, errors, touched, values } =
     useFormik({
