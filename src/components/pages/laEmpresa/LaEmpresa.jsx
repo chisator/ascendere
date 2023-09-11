@@ -44,7 +44,7 @@ export const LaEmpresa = () => {
           </div>
           <div className="row" data-aos="fade-up">
             <div className="col-12 texto">
-              <h2>Misión</h2>
+              <h2 id="mision">Misión</h2>
             </div>
             <div className="col-12 texto">
               <p>
@@ -60,7 +60,7 @@ export const LaEmpresa = () => {
           </div>
           <div className="row" data-aos="fade-up">
             <div className="col-12 texto">
-              <h2>Visión</h2>
+              <h2 id="vision">Visión</h2>
             </div>
             <div className="col-12 texto">
               <p>
@@ -76,7 +76,7 @@ export const LaEmpresa = () => {
           </div>
           <div className="row" data-aos="fade-up">
             <div className="col-12 texto">
-              <h2>Valores</h2>
+              <h2 id="valores">Valores</h2>
             </div>
             <div className="col-12 texto sub-valores">
               <ul className="ul-sub-valores">

@@ -3,8 +3,21 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 import { addService } from "../../../store/serviceSlice";
 import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+
 export const Footer = () => {
   const dispatch = useDispatch();
+
+  const [id, setId] = useState("");
+  useEffect(() => {
+    const scrollTo = () => {
+      const mision = document.getElementById(id);
+      if (mision) {
+        mision.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    };
+    scrollTo();
+  }, [id]);
   return (
     <footer className="container-fluid">
       <div className="row">
@@ -17,16 +30,22 @@ export const Footer = () => {
               <h5 className="h5">La Empresa</h5>
               <ul>
                 <li>
-                  <a href="">Quienes somos</a>
+                  <Link to="/la-empresa">Quienes somos</Link>
                 </li>
                 <li>
-                  <a href="">Misión</a>
+                  <Link onClick={() => setId("mision")} to="/la-empresa">
+                    Misión
+                  </Link>
                 </li>
                 <li>
-                  <a href="">Visión</a>
+                  <Link onClick={() => setId("vision")} to="/la-empresa">
+                    Visión
+                  </Link>
                 </li>
                 <li>
-                  <a href="">Valores</a>
+                  <Link onClick={() => setId("valores")} to="/la-empresa">
+                    Valores
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -68,7 +87,7 @@ export const Footer = () => {
               Contacto
             </Link>
           </li>
-          <a href="">
+          <a href="https://www.linkedin.com/company/ascenderepd/">
             <LinkedInIcon
               style={{ fontSize: "40px" }}
               color="secondary"
