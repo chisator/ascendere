@@ -30,9 +30,9 @@ export const Contact = () => {
               </div>
               <div>
                 <p>TEL</p>
-                <a href="tel: +54 11 5461 6329">
+                <a href="tel: +54 9 11 3682-7200">
                   <LocalPhoneIcon />
-                  +54 11 5461 6329
+                  +54 9 11 3682-7200
                 </a>
               </div>
               <div>

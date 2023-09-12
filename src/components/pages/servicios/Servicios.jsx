@@ -165,25 +165,26 @@ export const Servicios = () => {
                   </picture>
                   <div className="col-12 col-md-6 descripcion">
                     <p className="des-ns">
-                      ¿Sentís que necesitás un impulso en el camino hacia el
-                      logro de tus objetivos? ¡Tenemos la solución ideal para
-                      vos! En Ascendere, te ofrecemos un programa que te ayudará
-                      a descubrir y potenciar tus habilidades de liderazgo
-                      interno. <br /> Imaginate desarrollando una confianza
-                      inquebrantable en tus capacidades y tomando decisiones que
-                      te impulsen hacia tus metas. Ahí es donde entra en juego
-                      nuestra experiencia. Trabajamos incansablemente contigo
-                      para que puedas liderar tu vida de la manera que deseás.{" "}
-                      <br />
-                      No dejes que las dudas o la falta de dirección sean
-                      obstáculos en tu camino. ¡Permítenos ayudarte a forjar un
-                      liderazgo sólido en tu vida! Alcanzar tu máximo potencial
-                      está más cerca de lo que pensás.
+                      Ascendere DTP se basa en la reconocida escala de los 5
+                      Grandes Aspectos de la personalidad para brindarte una
+                      evaluación completa de quién eres. <br /> Nuestra herramienta te
+                      permite explorar y comprender en profundidad tus rasgos de
+                      personalidad, revelando tus fortalezas únicas y
+                      ofreciéndote estrategias efectivas para mitigar los
+                      aspectos negativos que podrían obstaculizar tus metas. Con
+                      Ascendere DTP, obtendrás una visión clara de tu
+                      personalidad y cómo influye en tus elecciones y
+                      resultados. Te ayudaremos a aprovechar al máximo tus
+                      puntos fuertes y a superar cualquier obstáculo que se
+                      interponga en tu camino hacia el éxito. Juntos,
+                      exploraremos el potencial que yace en tu propia
+                      personalidad para que puedas avanzar con confianza hacia
+                      tus objetivos.
                     </p>
                     <div className="link">
-                      <Link to={"/contact"}>
+                      <a href="https://api.whatsapp.com/send?phone=5491136827200&text=">
                         <Button variant="contained">Contactanos</Button>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
