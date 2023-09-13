@@ -49,10 +49,10 @@ export const SeccionServicio = () => {
         >
           <img src={img2} className="card-img-top" alt="" />
           <div className="card-body">
-            <h5 className="card-title">Autoliderazgo</h5>
+            <h5 className="card-title">Descubre tu potencial</h5>
             <p className="card-text">
-              Proporcionamos asesoramiento y coaching para desarrollar tu mejor
-              version.
+              Mediante nuestro exclusivo metodo vas a poder desarrollar la mejor
+              version de vos mismo.
             </p>
             <Link
               to={"/servicios"}

@@ -52,7 +52,7 @@ export const Servicios = () => {
       <div className="page-servicios">
         <header id="subnav-serv">
           <nav>
-            <ul className="d-flex align-items-center justify-content-center p-1">
+            <ul className="d-flex align-items-center justify-content-center p-1 gap-2 d-none d-sm-flex">
               <li className="">
                 <a
                   className="active subnav"
@@ -73,7 +73,43 @@ export const Servicios = () => {
                   data-bs-slide-to="1"
                   aria-label="Slide 2"
                 >
-                  Autoliderazgo
+                  Descubre tu potencial
+                </a>
+              </li>
+              <li className="">
+                <a
+                  className="subnav"
+                  onClick={() => scrollMove()}
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                >
+                  Consultoria
+                </a>
+              </li>
+            </ul>
+            <ul className="d-flex align-items-center justify-content-center p-1 d-sm-none">
+              <li className="">
+                <a
+                  className="active subnav"
+                  onClick={() => scrollMove()}
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="0"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                >
+                  Clima Laboral
+                </a>
+              </li>
+              <li className="">
+                <a
+                  className="subnav"
+                  onClick={() => scrollMove()}
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                >
+                  Descubre tu potencial
                 </a>
               </li>
               <li className="">
@@ -129,7 +165,7 @@ export const Servicios = () => {
                     <img src={img1} alt="" />
                   </picture>
                   <div className="col-12 col-md-6 descripcion">
-                    <p className="des-ns">
+                    <p className="des-ns consultoria">
                       ¿Sentís que el clima en la organización está afectando el
                       logro de los objetivos? ¡Tenemos la solución que
                       necesitan! En Ascendere, no solo transformamos el clima
@@ -164,19 +200,19 @@ export const Servicios = () => {
                     <img src={img2} alt="" />
                   </picture>
                   <div className="col-12 col-md-6 descripcion">
-                    <p className="des-ns">
+                    <p className="des-ns consultoria">
                       Ascendere DTP se basa en la reconocida escala de los 5
                       Grandes Aspectos de la personalidad para brindarte una
-                      evaluación completa de quién eres. <br /> Nuestra herramienta te
-                      permite explorar y comprender en profundidad tus rasgos de
-                      personalidad, revelando tus fortalezas únicas y
-                      ofreciéndote estrategias efectivas para mitigar los
-                      aspectos negativos que podrían obstaculizar tus metas. Con
-                      Ascendere DTP, obtendrás una visión clara de tu
-                      personalidad y cómo influye en tus elecciones y
-                      resultados. Te ayudaremos a aprovechar al máximo tus
-                      puntos fuertes y a superar cualquier obstáculo que se
-                      interponga en tu camino hacia el éxito. Juntos,
+                      evaluación completa de quién eres. <br /> Nuestra
+                      herramienta te permite explorar y comprender en
+                      profundidad tus rasgos de personalidad, revelando tus
+                      fortalezas únicas y ofreciéndote estrategias efectivas
+                      para mitigar los aspectos negativos que podrían
+                      obstaculizar tus metas. Con Ascendere DTP, obtendrás una
+                      visión clara de tu personalidad y cómo influye en tus
+                      elecciones y resultados. Te ayudaremos a aprovechar al
+                      máximo tus puntos fuertes y a superar cualquier obstáculo
+                      que se interponga en tu camino hacia el éxito. Juntos,
                       exploraremos el potencial que yace en tu propia
                       personalidad para que puedas avanzar con confianza hacia
                       tus objetivos.
