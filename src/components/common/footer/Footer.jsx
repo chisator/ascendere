@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 
 export const Footer = () => {
   const dispatch = useDispatch();
+  const scrollMove = () => {
+    window.scrollTo(0,0);
+  };
 
   const [id, setId] = useState("");
   useEffect(() => {
@@ -83,8 +86,21 @@ export const Footer = () => {
         </div>
         <div className="col-md-2 d-flex flex-column justify-content-between">
           <li>
-            <Link to={"/contact"} className="contacto">
+            <Link
+              onClick={() => scrollMove()}
+              to={"/contact"}
+              className="contacto"
+            >
               Contacto
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={scrollMove}
+              to={"/conoce-mas"}
+              className="contacto"
+            >
+              Conoce mas
             </Link>
           </li>
           <a href="https://www.linkedin.com/company/ascenderepd/">
