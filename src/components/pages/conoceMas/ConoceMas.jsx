@@ -4,7 +4,8 @@ import { Header } from "../../common/header/Header";
 import { Box, Typography } from "@mui/material";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLocation } from "react-router";
 
 export const ConoceMas = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,7 +13,10 @@ export const ConoceMas = () => {
   const triggerRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
-  
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
   
   useEffect(() => {
     window.scrollTo(0, -110);

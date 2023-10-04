@@ -1,9 +1,9 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./Footer.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { addService } from "../../../store/serviceSlice";
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export const Footer = () => {
   const dispatch = useDispatch();
@@ -12,6 +12,10 @@ export const Footer = () => {
   };
 
   const [id, setId] = useState("");
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
   useEffect(() => {
     const scrollTo = () => {
       const mision = document.getElementById(id);
