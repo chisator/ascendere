@@ -2,6 +2,7 @@ import { Contact } from "../components/pages/contact/Contact";
 import { Home } from "../components/pages/home/Home";
 import { LaEmpresa } from "../components/pages/laEmpresa/LaEmpresa";
 import { Servicios } from "../components/pages/servicios/Servicios";
+import { ConoceMasContainer } from "../components/pages/conoceMas/ConoceMasContainer";
 
 export const routes = [
   {
@@ -22,7 +23,12 @@ export const routes = [
   {
     id: "servicios",
     path: "/servicios",
-    Element: Servicios
+    Element: Servicios,
+  },
+  {
+    id: "conoceMas",
+    path: "/conoce-mas",
+    Element: ConoceMasContainer,
   },
 ];
   
