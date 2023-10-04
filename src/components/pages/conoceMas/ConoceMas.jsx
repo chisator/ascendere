@@ -39,12 +39,13 @@ export const ConoceMas = () => {
           },
         },
       }
-    );
-    return () => {
-      {
-        /* A return function for killing the animation on component unmount */
-      }
-      pin.kill();
+      );
+      return () => {
+        {
+          /* A return function for killing the animation on component unmount */
+        }
+        pin.kill();
+        scrolltop();
     };
   }, []);
   /*let panelsContainer = document.querySelector("#panels-container");
