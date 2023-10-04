@@ -12,11 +12,10 @@ export const ConoceMas = () => {
   const triggerRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
-
+  const scrolltop = () => {
+    window.scrollTo(0, 0);
+  };
   useEffect(() => {
-    const scrolltop = () => {
-      window.scrollTo(0, 0);
-    };
     scrolltop();
     const pin = gsap.fromTo(
       sectionRef.current,
@@ -89,7 +88,7 @@ export const ConoceMas = () => {
               fontWeight={500}
               paddingBottom={1}
               textTransform={"uppercase"}
-              textAlign={{xs:"center",md:"start"}}
+              textAlign={{ xs: "center", md: "start" }}
             >
               Matías Camigliano
             </Typography>
@@ -97,7 +96,7 @@ export const ConoceMas = () => {
               variant="h5"
               maxWidth={600}
               fontSize={{ xs: 20, md: 20 }}
-              textAlign={{xs:"center",sm:"start"}}
+              textAlign={{ xs: "center", sm: "start" }}
             >
               ¡Hola! Soy un apasionado de los recursos humanos con un sólido
               trasfondo en tecnología y gestión de proyectos. Criado en

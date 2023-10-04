@@ -95,7 +95,11 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link to={"/conoce-mas"} className="contacto">
+            <Link
+              onClick={() => scrollMove()}
+              to={"/conoce-mas"}
+              className="contacto"
+            >
               Conoce mas
             </Link>
           </li>
