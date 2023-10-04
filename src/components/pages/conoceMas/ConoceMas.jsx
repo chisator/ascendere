@@ -12,10 +12,11 @@ export const ConoceMas = () => {
   const triggerRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
-
+  
+  
   useEffect(() => {
-    window.scrollTo(0, 0);
-
+    window.scrollTo(0, -110);
+    
     const pin = gsap.fromTo(
       sectionRef.current,
       {
@@ -38,12 +39,13 @@ export const ConoceMas = () => {
           },
         },
       }
-    );
-    return () => {
-      {
-        /* A return function for killing the animation on component unmount */
-      }
-      pin.kill();
+      );
+      return () => {
+        {
+          /* A return function for killing the animation on component unmount */
+        }
+        pin.kill();
+        
     };
   }, []);
   /*let panelsContainer = document.querySelector("#panels-container");
