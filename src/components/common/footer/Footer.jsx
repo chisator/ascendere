@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export const Footer = () => {
   const dispatch = useDispatch();
   const scrollMove = () => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   };
 
   const [id, setId] = useState("");
@@ -95,11 +95,7 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link
-              onClick={scrollMove}
-              to={"/conoce-mas"}
-              className="contacto"
-            >
+            <Link to={"/conoce-mas"} className="contacto">
               Conoce mas
             </Link>
           </li>

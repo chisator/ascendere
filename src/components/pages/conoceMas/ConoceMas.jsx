@@ -1,10 +1,10 @@
 import "./ConoceMas.css";
 import { Footer } from "../../common/footer/Footer";
 import { Header } from "../../common/header/Header";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef, } from "react";
+import { useEffect, useRef } from "react";
 
 export const ConoceMas = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +14,10 @@ export const ConoceMas = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    const scrolltop = () => {
+      window.scrollTo(0, 0);
+    };
+    scrolltop();
     const pin = gsap.fromTo(
       sectionRef.current,
       {
@@ -22,17 +26,17 @@ export const ConoceMas = () => {
       {
         translateX: "-397vw",
         ease: "none",
-        duration: 1,
+        duration: 0.1,
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: 0.6,
+          scrub: 0.5,
           pin: true,
           snap: {
-            snapTo: 0.75 / (4 - 1),
+            snapTo: 1 / (5 - 1),
             inertia: false,
-            duration: { min: 0.1, max: 0.1 },
+            duration: { min: 0.5, max: 0.5 },
           },
         },
       }
@@ -71,19 +75,30 @@ export const ConoceMas = () => {
     <>
       <Header />
       <div className="conoceMas">
-        <section className="sobreMi par">
+        <Box
+          className="sobreMi par"
+          flexDirection={{ xs: "column-reverse", md: "row" }}
+          margin={{ xs: "auto" }}
+          justifyContent={{ xs: "center", md: "space-around" }}
+        >
           <div>
             <Typography
               variant="h2"
-              fontSize={70}
-              letterSpacing={3}
+              fontSize={{ xs: 30, md: 50 }}
+              letterSpacing={4}
               fontWeight={500}
               paddingBottom={1}
               textTransform={"uppercase"}
+              textAlign={{xs:"center",md:"start"}}
             >
               Matías Camigliano
             </Typography>
-            <Typography variant="h5" width={600}>
+            <Typography
+              variant="h5"
+              maxWidth={600}
+              fontSize={{ xs: 20, md: 20 }}
+              textAlign={{xs:"center",sm:"start"}}
+            >
               ¡Hola! Soy un apasionado de los recursos humanos con un sólido
               trasfondo en tecnología y gestión de proyectos. Criado en
               Avellaneda, Buenos Aires, y con el orgullo de ser hincha de Boca
@@ -93,14 +108,14 @@ export const ConoceMas = () => {
             </Typography>
           </div>
           <div className="img" />
-        </section>
+        </Box>
         <section id="panels" ref={triggerRef}>
           <div id="panels-container" ref={sectionRef} style={{ width: "500%" }}>
             <section className="panel full-screen impar">
               <Typography
                 variant="h2"
-                fontSize={70}
-                letterSpacing={3}
+                fontSize={{ xs: 40, md: 50 }}
+                letterSpacing={4}
                 fontWeight={500}
                 paddingBottom={1}
                 textAlign={"center"}
@@ -108,7 +123,12 @@ export const ConoceMas = () => {
               >
                 Formación
               </Typography>
-              <Typography variant="h5" textAlign={"center"}>
+              <Typography
+                variant="h5"
+                textAlign={"justify"}
+                padding={1}
+                fontSize={{ xs: 20, md: 20 }}
+              >
                 Mi formación académica incluye una licenciatura en Gestión de
                 Clima Laboral de la Universidad Siglo 21 y un Máster en
                 Dirección Estratégica de Recursos Humanos de la Universidad
@@ -120,8 +140,8 @@ export const ConoceMas = () => {
             <section className="panel full-screen par">
               <Typography
                 variant="h2"
-                fontSize={70}
-                letterSpacing={3}
+                fontSize={{ xs: 40, md: 50 }}
+                letterSpacing={4}
                 fontWeight={500}
                 paddingBottom={1}
                 textAlign={"center"}
@@ -129,7 +149,12 @@ export const ConoceMas = () => {
               >
                 Formación Laboral
               </Typography>
-              <Typography variant="h5" textAlign={"center"}>
+              <Typography
+                variant="h5"
+                textAlign={"justify"}
+                padding={1}
+                fontSize={{ xs: 16, md: 20 }}
+              >
                 Mi carrera comenzó en el mundo de la tecnología, donde acumulé
                 18 años de experiencia en diversas áreas, como Help Desk, End
                 User Support y Seguridad de la Información. A lo largo de más de
@@ -153,7 +178,7 @@ export const ConoceMas = () => {
             <section className="panel full-screen impar">
               <Typography
                 variant="h2"
-                fontSize={70}
+                fontSize={{ xs: 40, md: 50 }}
                 letterSpacing={3}
                 fontWeight={500}
                 paddingBottom={1}
@@ -162,7 +187,12 @@ export const ConoceMas = () => {
               >
                 Objetivos
               </Typography>
-              <Typography variant="h5" textAlign={"center"}>
+              <Typography
+                variant="h5"
+                textAlign={"justify"}
+                fontSize={{ xs: 16, md: 20 }}
+                padding={2}
+              >
                 En el ámbito organizacional, mi objetivo es forjar equipos de
                 trabajo altamente efectivos mediante metodologías de liderazgo
                 vanguardistas. Mi enfoque se centra en cambiar el paradigma
@@ -173,7 +203,12 @@ export const ConoceMas = () => {
               </Typography>
             </section>
             <section className="panel full-screen par">
-              <Typography variant="h5" textAlign={"center"}>
+              <Typography
+                variant="h5"
+                textAlign={"justify"}
+                fontSize={{ xs: 16, md: 20 }}
+                padding={2}
+              >
                 Basado en esta visión y pasión, decidí crear Ascendere. Nuestra
                 misión, visión y valores están centrados en fomentar el
                 desarrollo tanto a nivel individual como organizacional, guiando
@@ -185,7 +220,12 @@ export const ConoceMas = () => {
               </Typography>
             </section>
             <section className="panel full-screen impar">
-              <Typography variant="h5" textAlign={"center"}>
+              <Typography
+                variant="h5"
+                textAlign={"justify"}
+                fontSize={{ xs: 16, md: 20 }}
+                padding={2}
+              >
                 Estoy comprometido con el crecimiento y el éxito de las
                 organizaciones a través de la gestión eficiente de recursos
                 humanos y la mejora del clima laboral. Siempre estoy dispuesto a
